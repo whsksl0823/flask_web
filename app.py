@@ -20,7 +20,7 @@ def about():
     # return "TEST"
     return render_template('about.html', hello = "Kimmmm")
 
-@app.route('/articles')
+@app.route('/articles', methods=['GET', 'POST'])
 def articles():
     # print("Success")
     # return "TEST"
