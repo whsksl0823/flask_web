@@ -7,12 +7,23 @@ app.debug=True
 
 # @ : 데코레이션
 # route : 중계 - 서버의 경로 요청에 따라 무엇을 할지 결정 - 경로 지정
-@app.route('/data')
+@app.route('/')
 def index():
-    print("Success")
+    # print("Success")
     # return "TEST"
-    return render_template('home.html')
+    return render_template('home.html', hello = "Kkkkkkkkim")
 
+@app.route('/about')
+def about():
+    # print("Success")
+    # return "TEST"
+    return render_template('about.html', hello = "Kimmmm")
+
+@app.route('/articles')
+def articles():
+    # print("Success")
+    # return "TEST"
+    return render_template('articles.html', hello = "Kiiiiiiiiim")
 
 #local host ip address 127.0.0.1
 if __name__ == '__main__' :
