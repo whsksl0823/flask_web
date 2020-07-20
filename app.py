@@ -1,6 +1,7 @@
 # Flask - server 띄우기
 # render_template - template render 해줌 - html 문서를 html 형식으로 변환해서 날려줌
 from flask import Flask , render_template
+from data import Articles
 
 app = Flask(__name__)
 app.debug=True
@@ -23,7 +24,9 @@ def about():
 def articles():
     # print("Success")
     # return "TEST"
-    return render_template('articles.html', hello = "Kiiiiiiiiim")
+    articels = Articles()
+    print(len(articels[0]))
+    return render_template('articles.html', articles = articels)
 
 #local host ip address 127.0.0.1
 if __name__ == '__main__' :
