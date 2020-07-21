@@ -33,10 +33,11 @@ def show_image():
     return render_template('image.html')
 
 # 경로를 params로 받기 - <string:id> or <int:id>
-@app.route('/article/<int:ids>')
-def article(ids):
-    print(type(ids))
-    return render_template('articles.html')
+@app.route('/article/<int:id>')
+def article(id):
+    print(id)
+    articles = Articles()
+    return render_template('article.html', data = [articles, id])
 
 
 #local host ip address 127.0.0.1
