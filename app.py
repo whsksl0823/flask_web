@@ -6,7 +6,7 @@ from data import Articles
 app = Flask(__name__)
 app.debug=True
 
-# @ : 데코레이션
+# @ : 데코레이터
 # route : 중계 - 서버의 경로 요청에 따라 무엇을 할지 결정 - 경로 지정
 @app.route('/')
 def index():
@@ -31,6 +31,12 @@ def articles():
 @app.route('/test')
 def show_image():
     return render_template('image.html')
+
+# 경로를 params로 받기 - <string:id> or <int:id>
+@app.route('/article/<int:ids>')
+def article(ids):
+    print(type(ids))
+    return render_template('articles.html')
 
 
 #local host ip address 127.0.0.1
