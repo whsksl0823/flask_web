@@ -28,6 +28,11 @@ def articles():
     print(len(articels[0]))
     return render_template('articles.html', articles = articels)
 
+@app.route('/test')
+def show_image():
+    return render_template('image.html')
+
+
 #local host ip address 127.0.0.1
 if __name__ == '__main__' :
     # app.run(host = '0.0.0.0', port='6000')
